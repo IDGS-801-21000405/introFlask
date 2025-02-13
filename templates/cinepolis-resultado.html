@@ -1,0 +1,38 @@
+{%extends 'cinepolis.html'%}
+{%block container%}
+    
+    <div class="div-resultado">
+        <h1>Resumen</h1>
+        <br>
+        {% if resultado is defined and resultado is not none %}
+            <h3>{{resultado}}</h3>
+            <form action="/cinepolis">
+                <button type="submit" class="btn btn-primary">Regresar al menu</button>
+            </form>
+        {% endif %}
+
+        {% if asistentes is defined and asistentes is not none %}
+            <p>Total de asistentes: <b>{{ asistentes }}</b></p>
+        {% endif %}
+
+        {% if boletos is defined and boletos is not none %}
+            <p>Total de boletos: <b>{{ boletos }}</b></p>
+        {% endif %}
+
+        {% if metodo is defined and metodo is not none %}
+            <p>Metodo de pago: <b>{{ metodo }}</b></p>
+        {% endif %}
+
+        {% if totalVenta is defined and totalVenta is not none %}
+            <p>Total de venta: $<b>{{ totalVenta }}</b></p>
+            <form action="/cinepolis" method="post">
+                <input name="nombre" value="{{ nombre }}" hidden>
+                <button type="submit" class="btn btn-primary">Comprar nuevamente</button>
+            </form>
+            <form action="/cinepolis" method="post">
+                <button type="submit" class="btn btn-success">Terminar</button>
+            </form>
+        {% endif %}
+    </div>
+
+{%endblock%}

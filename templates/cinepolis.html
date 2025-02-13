@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%block container%}
+
+<div class="cinepolis">
+    <div class="div-principal">
+        <h1>Cinepolis</h1>
+        <form action="resultado-cinepolis" method="post">
+            <div class="form-inputs">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{ nombre if nombre is defined else '' }}">
+                </div>
+                <div class="form-group">
+                    <label for="asistentes">Asistentes</label>
+                    <input type="number" class="form-control" id="asistentes" name="asistentes">
+                </div>
+            </div>
+            <div class="form-inputs">
+                <div class="form-group">
+                    <label for="boletos">Boletos</label>
+                    <input type="number" class="form-control" id="boletos" name="boletos">
+                </div>
+                <div class="form-group">
+                    <label for="numero1">Metodo de pago</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="tarjeta-cinepolis" name="metodo" value="1">
+                    <label for="tarjeta-cinepolis">Efectivo</label>
+                    <input type="checkbox" class="form-check-input" id="tarjeta-cinepolis" name="metodo" value="2" style="margin-left: 20px;">
+                    <label for="tarjeta-cinepolis">Tarjeta Cinepolis</label>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Calcular</button>
+                <button type="reset" class="btn btn-danger">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
