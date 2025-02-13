@@ -4,12 +4,7 @@
     <div class="div-resultado">
         <h1>Resumen</h1>
         <br>
-        {% if resultado is defined and resultado is not none %}
-            <h3>{{resultado}}</h3>
-            <form action="/cinepolis">
-                <button type="submit" class="btn btn-primary">Regresar al menu</button>
-            </form>
-        {% endif %}
+        
 
         {% if asistentes is defined and asistentes is not none %}
             <p>Total de asistentes: <b>{{ asistentes }}</b></p>
@@ -30,7 +25,14 @@
                 <button type="submit" class="btn btn-primary">Comprar nuevamente</button>
             </form>
             <form action="/cinepolis" method="post">
-                <button type="submit" class="btn btn-success">Terminar</button>
+                <button type="submit" class="btn btn-success" style="margin-bottom: 20px;">Terminar</button>
+            </form>
+        {% endif %}
+        {% if resultado is defined and resultado is not none %}
+            <h3>{{resultado}}</h3>
+            <form action="/cinepolis" method="post">
+                <input name="nombre" value="{{ nombre }}" hidden>
+                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;">Actualizar datos</button>
             </form>
         {% endif %}
     </div>

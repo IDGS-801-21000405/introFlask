@@ -83,7 +83,7 @@ def resultadoCinepolis():
         totalVenta = total - (total * descuento / 100)
     else:
         resultado = f'Solamente puede comprar: {boletosPermitidos} boletos'
-        return render_template("cinepolis-resultado.html", resultado=resultado)
+        return render_template("cinepolis-resultado.html", resultado=resultado, nombre=nombre, boletos=boletos, asistentes=asistentes)
 
     if metodo == 1:
         metodo = 'Efectivo'

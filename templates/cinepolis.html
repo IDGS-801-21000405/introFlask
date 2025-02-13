@@ -12,13 +12,13 @@
                 </div>
                 <div class="form-group">
                     <label for="asistentes">Asistentes</label>
-                    <input type="number" class="form-control" id="asistentes" name="asistentes">
+                    <input type="number" class="form-control" id="asistentes" name="asistentes" value="{{ asistentes if asistentes is defined else '' }}">
                 </div>
             </div>
             <div class="form-inputs">
                 <div class="form-group">
                     <label for="boletos">Boletos</label>
-                    <input type="number" class="form-control" id="boletos" name="boletos">
+                    <input type="number" class="form-control" id="boletos" name="boletos" value="{{ boletos if boletos is defined else '' }}">
                 </div>
                 <div class="form-group">
                     <label for="numero1">Metodo de pago</label>

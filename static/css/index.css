@@ -33,7 +33,7 @@ body {
 .div-resultado {
     background-color: white;
     width: 500px;
-    height: 450px;
+    height: auto;
     border-radius: 30px;
     margin-top: 5%;
 
