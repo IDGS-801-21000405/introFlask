@@ -52,6 +52,53 @@ def func(param='juan'):
 def operaciones():
     return render_template("OperacionesBasicas.html")
 
+@app.route("/signos")
+def signos():
+    return render_template("signoZodiacal.html")
+
+@app.route("/calculaSigno", methods=["POST"])
+def calculaSigno():
+    nombre = request.form.get("nombre")
+    apellidoPaterno = request.form.get("apellidoPaterno")
+    apellidoMaterno = request.form.get("apellidoMaterno")
+    dia = int(request.form.get("dia"))
+    mes = int(request.form.get("mes"))
+    anio = int(request.form.get("anio"))
+    edad = 2025 - anio
+    signoZodiacal = ""
+    img = ""
+    lstSignos= [
+        "rata",   
+        "buey",  
+        "tigre",   
+        "conejo",  
+        "dragon",  
+        "serpiente",
+        "caballo", 
+        "cabra",   
+        "mono",    
+        "gallo",   
+        "perro",   
+        "cerdo"    
+    ]
+    lstSignosImg= [
+        "../static/img/signos/rata.jpg",   
+        "../static/img/signos/buey.jpg",  
+        "../static/img/signos/tigre.jpg",   
+        "../static/img/signos/conejo.jpg",  
+        "../static/img/signos/dragon.jpg",  
+        "../static/img/signos/serpiente.jpg",
+        "../static/img/signos/caballo.jpg", 
+        "../static/img/signos/cabra.jpg",   
+        "../static/img/signos/mono.jpg",    
+        "../static/img/signos/gallo.jpg",   
+        "../static/img/signos/perro.jpg",   
+        "../static/img/signos/cerdo.jpg"    
+    ]
+    signo = (anio - 4) % 12
+
+    return render_template("signoZodiacal.html", nombre=nombre, apellidoPaterno=apellidoPaterno, edad=edad, signoZodiacal=lstSignos[signo], img=lstSignosImg[signo])
+
 @app.route("/cinepolis", methods=["GET","POST"])
 def cinepolis():
     nombre = request.form.get("nombre")  

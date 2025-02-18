@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{%block container%}
+    <div class="menu-signos">
+        <div class="left-side">
+            <form action="/calculaSigno" method="post">
+                <div class="form-inputs">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoPaterno">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoMaterno">Apellido Materno</label>
+                        <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno">
+                    </div>
+                    <div class="date">
+                        <div class="form-group">
+                            <label for="dia">Dia</label>
+                            <input type="number" class="form-control" id="dia" name="dia">
+                        </div>
+                        <div class="form-group">
+                            <label for="mes">Mes</label>
+                            <input type="number" class="form-control" id="mes" name="mes">
+                        </div>
+                        <div class="form-group">
+                            <label for="anio">Anio</label>
+                            <input type="number" class="form-control" id="anio" name="anio">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero1">Genero</label>
+                        <br>
+                        <input type="checkbox" class="form-check-input" id="tarjeta-cinepolis" name="metodo" value="1">
+                        <label for="tarjeta-cinepolis">Hombre</label>
+                        <input type="checkbox" class="form-check-input" id="tarjeta-cinepolis" name="metodo" value="2" style="margin-left: 20px;">
+                        <label for="tarjeta-cinepolis">Mujer</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="buttons">
+                            <button type="submit" class="btn btn-success">Imprimir</button>
+                            <button type="reset" class="btn btn-warning">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right-side">
+            <form action="">
+                <h1>Hola {{nombre}} {{apellidoPaterno}}</h1>
+                <h3>tienes <b>{{edad}}</b> anios</h3>
+                <h3>tu signo zodiacal es <b>{{signoZodiacal}}</b></h3>
+                <div class="img-signo">
+                    <img src="{{ img if img is defined else '' }}">
+                </div>
+            </form>
+        </div>
+    </div>
+{%endblock%}
+
+<!--  -->

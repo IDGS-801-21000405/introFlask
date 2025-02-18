@@ -59,6 +59,70 @@ body {
     }
 }
 
+.menu-signos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .left-side, .right-side {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1, h3 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            width: 60%;
+            margin: 30px;
+            background-color: aliceblue;
+            border-radius: 20px;
+
+            .form-inputs {
+                margin: 20px;
+            }
+
+            .date {
+                display: flex;
+            }
+
+            .form-group {
+                margin: 10px;
+
+                .buttons {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top: 30px;
+
+                    button {
+                        width: 30%;
+                    }
+                }
+            }
+
+            .img-signo {
+                height: 30%;
+                width: 30%;
+                overflow: hidden;
+
+                img {
+                    width: 100%; 
+                    height: 100%; 
+                    object-fit: cover;
+                    margin: 20px;
+                }
+            }
+        }
+    }
+}
+
+
 .div-principal {
     background-color: white;
     width: 700px;
