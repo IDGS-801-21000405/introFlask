@@ -81,8 +81,12 @@ body {
         form {
             width: 60%;
             margin: 30px;
-            background-color: aliceblue;
+            background-color: white;
             border-radius: 20px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
 
             .form-inputs {
                 margin: 20px;
